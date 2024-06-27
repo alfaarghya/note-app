@@ -1,16 +1,15 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import CreateNotes from "./components/ui/CreateNotes";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-    <h1 className="test-3xl text-blue-600">Hello World</h1>
-    </>
-  )
+    <div className="flex flex-col items-center mt-3 mb-3">
+      <h1 className="text-3xl font-semibold border-b-2">
+        Make Your Note with us
+      </h1>
+      <CreateNotes />
+    </div>
+  );
 }
 
-export default App
+export default App;
