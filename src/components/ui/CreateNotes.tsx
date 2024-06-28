@@ -33,7 +33,7 @@ const CreateNotes = () => {
   };
 
   return (
-    <div className="w-9/12">
+    <div className=" p-9 grid grid-cols-2 gap-10">
       <div className="m-5 flex flex-col w-full ite  gap-5">
         <div className="">
           <h3 className="text-lg">Add your title</h3>
@@ -53,10 +53,10 @@ const CreateNotes = () => {
           ></textarea>
         </div>
         <button
-          className="mb-5 border rounded-lg text-lg px-4 py-2 cursor-pointer bg-black text-white  font-bold transform hover:-translate-y-1 transition duration-400"
+          className="mb-5  rounded-lg text-lg px-4 py-2 cursor-pointer bg-black text-white  font-bold transform hover:-translate-y-1 transition duration-400"
           onClick={handleCreateNote}
         >
-          Create Note
+          Create Note <i className="ri-sticky-note-add-fill pl-3"></i>
         </button>
       </div>
 
