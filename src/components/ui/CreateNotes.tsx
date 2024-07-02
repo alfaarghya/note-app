@@ -15,11 +15,16 @@ const CreateNotes = () => {
   }, []);
 
   const handleCreateNote = () => {
+    if (title.trim() === "" || description.trim() === "") {
+      alert("Title and Description cannot be empty");
+      return;
+    }
+
     const newNote = { title, description };
     const updatedNotes: noteType[] = [...note, newNote];
     setNote(updatedNotes);
     localStorage.setItem("notes", JSON.stringify(updatedNotes));
-    alert("Note Created");
+    // alert("Note Created");
 
     // Reset input fields
     setTitle("");
@@ -33,8 +38,8 @@ const CreateNotes = () => {
   };
 
   return (
-    <div className=" p-9 grid grid-cols-2 gap-10">
-      <div className="m-5 flex flex-col w-full ite  gap-5">
+    <div className="p-9 grid grid-cols-2 gap-10">
+      <div className="m-5 flex flex-col w-full gap-5">
         <div className="">
           <h3 className="text-lg">Add your title</h3>
           <input
@@ -53,7 +58,7 @@ const CreateNotes = () => {
           ></textarea>
         </div>
         <button
-          className="mb-5  rounded-lg text-lg px-4 py-2 cursor-pointer bg-black text-white  font-bold transform hover:-translate-y-1 transition duration-400"
+          className="mb-5 rounded-lg text-lg px-4 py-2 cursor-pointer bg-black text-white font-bold transform hover:-translate-y-1 transition duration-400"
           onClick={handleCreateNote}
         >
           Create Note <i className="ri-sticky-note-add-fill pl-3"></i>
